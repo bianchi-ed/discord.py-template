@@ -1,6 +1,6 @@
 # Discord.py Bot Template
 
-A template for building Discord bots using `discord.py` with event and command handling via cogs.
+Template project for building Discord bots in Python. Provides basic server connection logic and commands/events handling using cogs.
 
 ## Project Structure
 
