@@ -29,27 +29,27 @@ async def load_cogs():
     except Exception:
         pass
 
-        base = os.path.abspath('./cogs')
-        modules = []
-        for root, _, files in os.walk(base):
-            for filename in sorted(files):
-                if not filename.endswith('.py'):
-                    continue
-                if filename == '__init__.py' or filename.startswith('_'):
-                    continue
-                filepath = os.path.join(root, filename)
-                rel = os.path.relpath(filepath, base)
-                module = os.path.splitext(rel)[0].replace(os.sep, '.')
-                full = f'cogs.{module}'
-                modules.append(full)
+    base = os.path.abspath('./cogs')
+    modules = []
+    for root, _, files in os.walk(base):
+        for filename in sorted(files):
+            if not filename.endswith('.py'):
+                continue
+            if filename == '__init__.py' or filename.startswith('_'):
+                continue
+            filepath = os.path.join(root, filename)
+            rel = os.path.relpath(filepath, base)
+            module = os.path.splitext(rel)[0].replace(os.sep, '.')
+            full = f'cogs.{module}'
+            modules.append(full)
 
-        # Load in deterministic order
-        for full in sorted(set(modules)):
-            try:
-                await bot.load_extension(full)
-                print(f"Loaded cog: {full}")
-            except Exception as e:
-                print(f"Failed to load cog {full}: {e}")
+    # Load in deterministic order
+    for full in sorted(set(modules)):
+        try:
+            await bot.load_extension(full)
+            print(f"Loaded cog: {full}")
+        except Exception as e:
+            print(f"Failed to load cog {full}: {e}")
                 
 @bot.event
 async def on_ready():
