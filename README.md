@@ -12,11 +12,13 @@ discord.py-template/
 ├── cogs/                
 │   ├── commands/         # Command cogs
 │   │   └── server.py     
-│   └── events/           # Event cogs
-│       ├── core.py       
-│       ├── message.py    
-│       ├── member.py     
-│       ├── guild.py      
-│       ├── channel.py    
-│       └── interaction.py 
+│   ├── events/           # Event cogs
+│   │   ├── core.py       
+│   │   ├── message.py    
+│   │   ├── member.py     
+│   │   ├── guild.py      
+│   │   ├── channel.py    
+│   │   └── interaction.py 
+│   └── tasks/            # Task cogs
+│       └── tasks.py      
 ```
